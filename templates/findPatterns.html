@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; text-align: center;}
+            td{ padding: 10px; }
+            tr{ text-align: center; font-weight: bold;}
+            .bullish { background: green;color: white; }
+            .bearish { background: red;color: white; }
+            .center { display: block;margin-left: auto;margin-right: auto;
+}
+        </style>
+    </head>
+    <body w3-black>
+        <h1>Stock Patterns 'R' Us</h1>
+
+        <form>
+
+            <select name="pattern">
+                {% for pattern in patterns %}
+                    <option value="{{ pattern}}" {% if pattern == currentPattern %} selected="selected"{% endif %}>{{ patterns[pattern] }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="scan"/>
+
+        </form>
+        <center>
+        <table>
+            <tr>
+                <th>
+                    Symbol
+                </th>
+                <th>
+                    Company Name
+                </th>
+                <th>
+                    Signal
+                </th>
+            </tr>
+            {% for stock in stocks %}
+                {% if stocks[stock][currentPattern] %}
+                <tr>
+                    <td class="{{ stocks[stock][currentPattern] }}">{{ stock }}</td>
+                    <td class="{{ stocks[stock][currentPattern] }}">{{ stocks[stock]['company'] }}</td>
+                    <td class="{{ stocks[stock][currentPattern] }}">{{ stocks[stock][currentPattern] }}</td>
+                </tr>
+                <tr>
+                    <td colspan ="3">
+                        <img src="https://finviz.com/chart.ashx?t={{ stock }}&ty=c&ta=1&p=d&s=1" class="center"/>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+        </table>
+        </center>
+    </body>
+</html>

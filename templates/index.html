@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; }
+            td{ padding: 10px; }
+            tr{ text-align: center; font-weight: bold;}
+            .bullish { background: green;color: white; }
+            .bearish { background: red;color: white; }
+
+            #showcase{
+                background-image: url('https://cdn.glitch.com/9815e97d-4729-423a-bcca-3c29bd3be37c%2Fstock_bg.jpg');
+                background-size:cover;
+                background-position:center;
+                height:100vh;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                padding:0 20px;
+                opacity: 0.8;
+                color: white;
+                transition: box-shadow .3s ease-out;    
+                }
+
+                #showcase h1{
+                font-size:72px;
+                line-height:1.2;
+                font-family: 'Medula One', cursive;
+            }
+
+                #showcase .overlay{
+                    z-index: -1;
+                }
+                #showcase p{
+                font-size:25px;
+                font-weight: bold;
+                }
+
+                #showcase .button{
+                font-size:18px;
+                text-decoration:none;
+                color: #FFF;
+                border:#FFF 1px solid;
+                padding:10px 20px;
+                border-radius:10px;
+                margin-top:20px;
+                }
+
+                #showcase .button:hover{
+                background: darkcyan;
+                color:#fff;
+                }
+
+
+        </style>
+        <title>{{ title }}</title>
+    </head>
+    <header id="showcase">
+        <h1>Welcome To Stock Patterns 'R' Us</h1>
+        <div class="overlay">
+            <p>Stock Analysis By Candlestick Patterns Made Easy </p>
+        </div>
+        <a href="/about" class="button">Read More</a>
+      </header>
